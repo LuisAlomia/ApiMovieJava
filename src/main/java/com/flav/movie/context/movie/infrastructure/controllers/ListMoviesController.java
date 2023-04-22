@@ -1,6 +1,5 @@
 package com.flav.movie.context.movie.infrastructure.controllers;
 
-import com.flav.movie.context.movie.aplication.CreateMovieUseCase;
 import com.flav.movie.context.movie.aplication.ListMoviesUseCase;
 import com.flav.movie.context.movie.domain.models.Movie;
 import org.springframework.http.HttpStatus;

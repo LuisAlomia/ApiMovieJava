@@ -32,7 +32,7 @@ public class JpaRepositoryMovieImpl implements MovieRepository {
 
     @Override
     public Optional<Movie> findOne(long id) {
-        return Optional.empty();
+        return this._jpaRepositoryMovie.findById(id).map(MovieEntity::toMovieModel);
     }
 
     @Override

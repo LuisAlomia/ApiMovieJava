@@ -1,6 +1,7 @@
 package com.flav.movie.context.movie.infrastructure.config;
 
 import com.flav.movie.context.movie.aplication.CreateMovieUseCase;
+import com.flav.movie.context.movie.aplication.FindOneMovieUseCase;
 import com.flav.movie.context.movie.aplication.ListMoviesUseCase;
 import com.flav.movie.context.movie.domain.repository.MovieRepository;
 import com.flav.movie.context.movie.infrastructure.repositoryImpl.JpaRepositoryMovieImpl;
@@ -18,6 +19,11 @@ public class ApplicationConfig {
     @Bean
     public ListMoviesUseCase listMoviesUseCase(MovieRepository movieRepository){
         return new ListMoviesUseCase(movieRepository);
+    }
+
+    @Bean
+    public FindOneMovieUseCase findOneMovieUseCase(MovieRepository movieRepository){
+        return new FindOneMovieUseCase(movieRepository);
     }
 
     @Bean
