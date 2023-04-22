@@ -37,13 +37,18 @@ public class JpaRepositoryMovieImpl implements MovieRepository {
 
     @Override
     public Optional<Movie> update(long id, Movie movie) {
+        if (this._jpaRepositoryMovie.existsById(id)) {
+            MovieEntity movieEntity = MovieEntity.newMovie(movie);
+            MovieEntity updateMovie = this._jpaRepositoryMovie.save(movieEntity);
+            return  Optional.of(updateMovie.toMovieModel());
+        }
         return Optional.empty();
     }
 
     @Override
     public boolean delete(long id) {
-        if (_jpaRepositoryMovie.existsById(id)) {
-            _jpaRepositoryMovie.deleteById(id);
+        if (this._jpaRepositoryMovie.existsById(id)) {
+            this._jpaRepositoryMovie.deleteById(id);
             return true;
         }
         return false;

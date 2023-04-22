@@ -1,8 +1,6 @@
 package com.flav.movie.context.movie.infrastructure.controllers;
 
 import com.flav.movie.context.movie.aplication.DeleteMovieUseCase;
-import com.flav.movie.context.movie.aplication.FindOneMovieUseCase;
-import com.flav.movie.context.movie.domain.models.Movie;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
