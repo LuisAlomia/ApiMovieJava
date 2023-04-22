@@ -1,6 +1,7 @@
 package com.flav.movie.context.movie.infrastructure.config;
 
 import com.flav.movie.context.movie.aplication.CreateMovieUseCase;
+import com.flav.movie.context.movie.aplication.DeleteMovieUseCase;
 import com.flav.movie.context.movie.aplication.FindOneMovieUseCase;
 import com.flav.movie.context.movie.aplication.ListMoviesUseCase;
 import com.flav.movie.context.movie.domain.repository.MovieRepository;
@@ -24,6 +25,11 @@ public class ApplicationConfig {
     @Bean
     public FindOneMovieUseCase findOneMovieUseCase(MovieRepository movieRepository){
         return new FindOneMovieUseCase(movieRepository);
+    }
+
+    @Bean
+    public DeleteMovieUseCase deleteMovieUseCase(MovieRepository movieRepository){
+        return new DeleteMovieUseCase(movieRepository);
     }
 
     @Bean

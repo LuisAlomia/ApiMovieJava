@@ -42,6 +42,10 @@ public class JpaRepositoryMovieImpl implements MovieRepository {
 
     @Override
     public boolean delete(long id) {
+        if (_jpaRepositoryMovie.existsById(id)) {
+            _jpaRepositoryMovie.deleteById(id);
+            return true;
+        }
         return false;
     }
 }
